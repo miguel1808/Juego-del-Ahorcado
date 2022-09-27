@@ -1,0 +1,435 @@
+:root{
+    --fuenteGeneral: 'Inter', sans-serif;
+    --blanco: #F6F6F6;
+    --negri: #1A1A1A;
+    --pink: #FFC7C7;
+    --pinkClaro: #FFE2E2;
+    --varia: #8785A2;
+    --celesteP: #8ec5fc;
+    --celeste: #a6c1ee;
+}
+
+/* Globales  */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */ 
+    min-height: 100%;
+    position: relative;   
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+body{
+    margin: 0;
+    font-family: var(--fuenteGeneral);
+    background: var(--celesteP);
+    /* background-image: linear-gradient(to top, var(--pink) 0%, var(--celeste) 100%); */
+}
+
+audio{
+    height: 3rem;
+    width: 13rem;
+}
+/* header */
+.header{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btnMusica {
+    padding: .5rem;
+    background-color: blue;
+    border-radius: 50%;
+    
+}
+.fa-play, .fa-stop{
+    padding: 1rem;
+    font-size: 3rem;
+    color: var(--blanco);
+
+}
+.fa-stop{
+    display: none;
+}
+.gif{
+    margin: 0 auto;
+    position: relative;
+    width: 54%;
+    height: 50px;
+    border-radius: 2rem;
+    background-size: contain;
+    background-image: url(https://media2.giphy.com/media/j795aicq3CsS8ZQv0F/giphy.gif?cid=6c09b952dy2s6v94chubnfan6altf9d29etj87vxesnes7yh&rid=giphy.gif&ct=s);
+}
+/* main principal */
+.pantalla-inicio{
+    margin: 0 auto;
+    padding: 5rem;
+    border-radius: 2rem;
+    background: var(--celesteP);
+}
+.btn{
+    width: 100%;
+    padding: 2rem;
+    margin: 1rem;
+    border: none ;
+    border-radius: 2rem;
+    background: blue;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    color: white;
+}
+.btnSecundario{
+    padding: 1rem;
+    background: none;
+    border: .2rem solid blue;
+    color: black;
+}
+.btnSecundario:hover{
+    
+    font-size: 1.2rem;
+    color: white;
+    background: blue;
+}
+#btnStart:hover{
+    background: white;
+    font-size: 1.2rem;
+    color: black;
+    border: blue;
+}
+
+@media (min-width: 768px) {
+    body{
+        height: 100vh;
+    }
+    .pantalla-inicio{
+        width: 80%;
+        font-size: 1.4rem;
+    }
+    .pantalla-inicio #btnStart:hover{
+        background: var(--celesteP);
+        font-size: 1.5rem;
+        border: solid blue;
+    }
+    .pantalla-inicio .btnSecundario:hover{
+        background: blue;
+        color: white;
+        font-size: 1.5rem;
+    }
+    .gif{
+        width: 50%;
+    }
+    .gif{
+        width: 75%;
+        height: 60px;
+    }
+    
+}
+@media (min-width: 1024px) {
+    
+    .pantalla-inicio{
+        width: 50%;
+        font-size: 1.4rem;
+    }
+
+    .gif{
+        width: 50%;
+    }
+    .gif{
+        width: 85%;
+        height: 60px;
+    }
+}
+/*  */
+
+
+/* main | Ahorcado */
+
+.pantalla-juego{
+    margin: 0 auto;
+    width: 70%;
+    padding: 1rem;
+    margin-top: -3rem;
+}
+.pantalla-juego canvas{
+    margin: -47px auto;
+    width: 100%;
+    border-radius: 2rem;
+
+}
+
+.pistaContenedor{
+    width: 100%;
+    padding: 2.7rem;
+    background: var(--celesteP);
+    border-radius: 0 0 2rem 2rem;
+    margin-top: 1rem;
+    margin-bottom: -2rem;
+}
+.pistaContenedor h3{
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+
+    .pantalla-juego canvas{
+        display: block;
+        margin: -47px auto;
+        width: 60%;
+    }
+    .pistaContenedor{
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+        
+        margin-top: -1rem;
+        margin-bottom: -2rem;
+    }
+}
+@media (min-width: 1024px) {
+
+     .pantalla-juego{
+        display: block;
+        margin:  0 auto;
+         width: 80%;
+     }
+     .pantalla-juego canvas{
+        display: block;
+        margin:  -47px auto;
+        width: 25%;
+
+    }
+    .pistaContenedor{
+        display: block;
+        margin:  0 auto;
+        width: 40%;
+        margin-top: 1rem;
+        margin-bottom: -2rem;
+    }
+}
+
+#pista{
+    color: var(--negri);
+}
+/* Main teclado */
+.teclado{
+    display: flex;
+    width: 83%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 2rem;
+    margin-top:  -4rem;
+    background-color: var(--pinkClaro);
+    text-align: center;
+}
+
+.btnTeclado {
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #1A1A1A;
+    border-radius: 1.5rem;
+    margin-bottom: .5rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    padding: .6rem .8rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.btnTeclado:disabled {
+    pointer-events: none;
+}
+
+.btnTeclado:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.btnTeclado:active {
+    box-shadow: none;
+    transform: translateY(0);
+
+}
+.teclaDeshabilitada:disabled{
+    pointer-events: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #1A1A1A;
+    border-radius: 1.5rem;
+    margin-bottom: .5rem;
+    box-sizing: border-box;
+    display: inline-block;
+    outline: none;
+    padding: .6rem .8rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+.btnTrue{
+    color: white;
+    background-color: green;
+}
+.disableBtn{
+    color: white;
+    background-color: red;
+}
+@media (min-width: 768px) {
+    .teclado{
+        margin: 0 auto;
+        width: 53%;
+        text-align: center;
+    }
+    .btnTeclado{
+        padding: 1rem 1.4rem;
+        font-size: 1.5rem;
+    }
+    .teclaDeshabilitada:disabled{
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .teclado{
+        margin: 0 auto;
+        width: 35%;
+        text-align: center;
+    }
+    .btnTeclado{
+        padding: 1rem 1.4rem;
+        font-size: 1.5rem;
+    }
+    .teclaDeshabilitada:disabled{
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+}
+/* Botones ahorcado */
+.btnJuego{
+    display: flex;
+    width: 100%;
+    padding: 3rem;
+    text-align: center;
+}
+.btnJuego .btn{
+    margin-top: -.2rem;
+    padding: 2.1rem;
+    display: inline-block;
+    
+}
+#btnReiniciar:hover , #btnGuardar:hover{
+    font-size: 1.3rem;
+    background: var(--celesteP);
+    border: solid blue;
+    color: black;
+}
+
+@media (min-width: 768px) {
+    .btnJuego{
+        margin: 0 auto;
+        width: 60%;
+        text-align: center;
+    }
+    .btnJuego .btn{
+        width: 40%;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .btnJuego{
+        margin: 0 auto;
+        width: 40%;
+        text-align: center;
+    }
+    .btnJuego .btn{
+        padding: 2rem;
+
+        width: 40%;
+    }
+
+}
+
+/* agregar palabra */
+.pantallaAgregar{
+    padding: 2rem;
+    margin: 0 auto;
+
+    
+}
+.inputForm{
+    display: grid;
+    
+}
+
+#newPalabra{
+    background: red;
+    border: none;
+    margin: .5rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: var(--pinkClaro);
+}
+
+#newPista{
+    background: var(--pinkClaro);
+    border: none;
+    margin: .5rem 0;
+    flex: 1;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: 23rem;
+    resize: none;
+}
+
+#newPalabra::placeholder, #newPista::placeholder{
+    text-align: start;
+    color: var(--negri);
+
+}
+@media (min-width: 768px) {
+    .pantallaAgregar{
+        width: 60%;
+    }
+}
+@media (min-width: 1024px) {
+    .pantallaAgregar{
+        width: 40%;
+    }
+}
+
+/* Footer */
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: var(--negri);
+}
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+}
+.fa-brands{
+    padding: 1.5rem;
+    color: var(--blanco);
+    font-size: 2.3rem;
+}
+.footer p{
+    color: var(--blanco);
+    font-size: 1.5rem;
+}
