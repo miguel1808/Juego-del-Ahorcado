@@ -232,7 +232,7 @@ function pulsarTecla(){
 
   let sonido = document.createElement("audio");
   
-    sonido.setAttribute("src","/audio/luffy.mp3");
+    sonido.setAttribute("src","luffy.mp3");
     sonido.setAttribute('autoplay', 'autoplay');
     sonido.setAttribute("loop","loop");
     musica.appendChild(sonido);
